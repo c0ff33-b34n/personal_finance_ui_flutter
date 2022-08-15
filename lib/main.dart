@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
             children: [
               userMessage,
               searchBar,
+              balance,
             ],
           ),
         ),
@@ -81,5 +82,33 @@ Widget searchBar = Container(
         size: 30.0,
       ),
     ),
+  ),
+);
+
+Widget balance = Container(
+  padding: const EdgeInsets.all(16),
+  child: Row(
+    children: [
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              padding: const EdgeInsets.only(bottom: 8),
+              child: const Text(
+                'Total Balance',
+              ),
+            ),
+            const Text(
+              '\$ 123 640.32',
+              style: TextStyle(
+                fontSize: 26.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ],
   ),
 );
