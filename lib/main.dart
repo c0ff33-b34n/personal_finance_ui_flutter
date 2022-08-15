@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
               userMessage,
               searchBar,
               balance,
+              cardsHeader,
             ],
           ),
         ),
@@ -107,6 +108,44 @@ Widget balance = Container(
               ),
             ),
           ],
+        ),
+      ),
+    ],
+  ),
+);
+
+Widget cardsHeader = Container(
+  padding: const EdgeInsets.all(16),
+  child: Row(
+    children: [
+      Expanded(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Cards',
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
+      Center(
+        child: Ink(
+          height: 40.0,
+          width: 60.0,
+          padding: EdgeInsets.zero,
+          decoration: BoxDecoration(
+            color: Colors.lightBlue,
+            borderRadius: BorderRadius.circular(13.0),
+          ),
+          child: IconButton(
+            icon: const Icon(Icons.add),
+            color: Colors.white,
+            onPressed: () {},
+          ),
         ),
       ),
     ],
