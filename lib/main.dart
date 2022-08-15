@@ -24,7 +24,10 @@ class MyApp extends StatelessWidget {
         body: Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            children: [userMessage],
+            children: [
+              userMessage,
+              searchBar,
+            ],
           ),
         ),
       ),
@@ -57,5 +60,26 @@ Widget userMessage = Container(
       ),
       Icon(Icons.notifications),
     ],
+  ),
+);
+
+Widget searchBar = Container(
+  padding: const EdgeInsets.all(16),
+  child: TextField(
+    decoration: InputDecoration(
+      contentPadding: const EdgeInsets.symmetric(vertical: 15.0),
+      border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20.0),
+          borderSide: const BorderSide(width: 0.8)),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(20.0),
+        borderSide: BorderSide(width: 0.8, color: Colors.black),
+      ),
+      hintText: 'Transactions, services or contracts',
+      prefixIcon: Icon(
+        Icons.search,
+        size: 30.0,
+      ),
+    ),
   ),
 );
