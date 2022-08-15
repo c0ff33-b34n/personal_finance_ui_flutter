@@ -132,21 +132,41 @@ Widget cardsHeader = Container(
           ],
         ),
       ),
-      Center(
-        child: Ink(
-          height: 40.0,
-          width: 60.0,
-          padding: EdgeInsets.zero,
-          decoration: BoxDecoration(
-            color: Colors.lightBlue,
-            borderRadius: BorderRadius.circular(13.0),
+      Stack(
+        alignment: AlignmentDirectional.center,
+        children: [
+          Container(
+            height: 42.0,
+            width: 62.0,
+            padding: const EdgeInsets.all(0.0),
+            alignment: Alignment.bottomCenter,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(13.0),
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: <Color>[
+                  Colors.black45,
+                  Colors.black54,
+                ],
+              ),
+            ),
           ),
-          child: IconButton(
-            icon: const Icon(Icons.add),
-            color: Colors.white,
-            onPressed: () {},
+          Container(
+            height: 40.0,
+            width: 60.0,
+            padding: EdgeInsets.zero,
+            decoration: BoxDecoration(
+              color: Colors.lightBlue,
+              borderRadius: BorderRadius.circular(13.0),
+            ),
+            child: IconButton(
+              icon: const Icon(Icons.add),
+              color: Colors.white,
+              onPressed: () {},
+            ),
           ),
-        ),
+        ],
       ),
     ],
   ),
