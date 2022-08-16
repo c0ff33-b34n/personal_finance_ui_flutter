@@ -8,4 +8,6 @@ class PaymentCard {
   final CardType cardType;
   final String cardNumber;
   final String expiryDate;
+
+  String get cardTypeString => cardType.toString().split('.').last;
 }

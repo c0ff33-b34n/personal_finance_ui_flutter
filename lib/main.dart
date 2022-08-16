@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'colors.dart';
+import 'models/card_model.dart';
+import 'models/cards_repository.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -191,68 +193,92 @@ Widget cardsHeader = Container(
   ),
 );
 
-Widget individualPaymentCard = Container(
-  padding: const EdgeInsets.all(18),
-  height: 214,
-  width: 340,
-  decoration: BoxDecoration(
-    color: kBackgroundSecondaryDark,
-    borderRadius: BorderRadius.circular(20.0),
-  ),
-  child: Row(
-    children: [
-      Expanded(
-        flex: 3,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Card type',
-              style: TextStyle(
-                fontSize: 16.0,
-              ),
-            ),
-            Column(
+PaymentCardWidget individualPaymentCard =
+    PaymentCardWidget(card: PaymentCardsRepository.loadPaymentCards()[0]);
+
+class PaymentCardWidget extends StatelessWidget {
+  const PaymentCardWidget({required this.card, Key? key}) : super(key: key);
+
+  final PaymentCard card;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(18),
+      height: 214,
+      width: 340,
+      decoration: BoxDecoration(
+        color: kBackgroundSecondaryDark,
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            flex: 3,
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: Text(
-                    'Card number',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
                 Text(
-                  'Valid Thru',
+                  card.cardType == CardType.Visa ? 'Debit Card' : 'Credit Card',
                   style: TextStyle(
                     fontSize: 16.0,
                   ),
                 ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 8.0),
+                      child: Text(
+                        card.cardNumber,
+                        style: TextStyle(
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Valid Thru ' + card.expiryDate,
+                      style: TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
-          ],
-        ),
-      ),
-      Expanded(
-        flex: 1,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Icon(
-              Icons.payment,
-              color: kTextColorPrimaryDark,
+          ),
+          Expanded(
+            flex: 1,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                card.cardType == CardType.Visa
+                    ? Padding(
+                        padding: const EdgeInsets.only(bottom: 2.0),
+                        child: Image.asset(
+                          'assets/visa_logo_sm.png',
+                          alignment: Alignment.bottomRight,
+                          width: 76.0,
+                          height: 50.0,
+                        ),
+                      )
+                    : Image.asset(
+                        'assets/mastercard_logo_sm.png',
+                        alignment: Alignment.bottomRight,
+                        width: 76.0,
+                        height: 50.0,
+                      ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
-    ],
-  ),
-);
+    );
+  }
+}
 
 ThemeData _buildAppTheme() {
   final ThemeData base = ThemeData.light();
