@@ -190,8 +190,6 @@ Widget cardsHeader = Container(
   ),
 );
 
-final ThemeData _kShrineTheme = _buildAppTheme();
-
 ThemeData _buildAppTheme() {
   final ThemeData base = ThemeData.light();
   return base.copyWith(
