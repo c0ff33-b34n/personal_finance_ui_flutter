@@ -10,3 +10,12 @@ const kButtonGradientBottomDark = Color(0xFF1A1A4C);
 
 const kTextRed = Color(0xFFC62976);
 const kTextGreen = Color(0xFF51B6A6);
+
+const kGradientTransparent = Color(0x00111111);
+const kGradientPoint1 = Color(0xFFFF5464);
+const kGradientPoint2 = Color(0x77FF5464);
+const kGradientPoint3 = Color(0xFFFF9679);
+const kGradientPoint4 = Color(0x88FF8049);
+const kGradientPoint5 = Color(0xFFFE996F);
+const kGradientPoint6 = Color(0xFFFE996F);
+const kGradientPink = Color(0xFFFE1696);
