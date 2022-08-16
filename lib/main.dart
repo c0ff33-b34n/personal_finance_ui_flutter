@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
               searchBar,
               balance,
               cardsHeader,
+              individualPaymentCard,
             ],
           ),
         ),
@@ -185,6 +186,69 @@ Widget cardsHeader = Container(
             ),
           ),
         ],
+      ),
+    ],
+  ),
+);
+
+Widget individualPaymentCard = Container(
+  padding: const EdgeInsets.all(18),
+  height: 214,
+  width: 340,
+  decoration: BoxDecoration(
+    color: kBackgroundSecondaryDark,
+    borderRadius: BorderRadius.circular(20.0),
+  ),
+  child: Row(
+    children: [
+      Expanded(
+        flex: 3,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Card type',
+              style: TextStyle(
+                fontSize: 16.0,
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 8.0),
+                  child: Text(
+                    'Card number',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Text(
+                  'Valid Thru',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+      Expanded(
+        flex: 1,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Icon(
+              Icons.payment,
+              color: kTextColorPrimaryDark,
+            ),
+          ],
+        ),
       ),
     ],
   ),

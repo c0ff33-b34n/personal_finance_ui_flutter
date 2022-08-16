@@ -1,4 +1,4 @@
-enum CardType { Debit, Credit }
+enum CardType { Visa, Mastercard }
 
 class PaymentCard {
   const PaymentCard(
