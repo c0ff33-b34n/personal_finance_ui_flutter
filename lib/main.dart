@@ -76,8 +76,9 @@ Widget userMessage = Container(
               ),
             ),
             const Text(
-              'Welcome Back!,',
+              'Welcome Back!',
               style: TextStyle(
+                fontSize: 20.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
