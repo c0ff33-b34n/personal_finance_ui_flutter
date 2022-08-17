@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:personal_finance_tracking_ui/models/card_model.dart';
 
 import 'colors.dart';
-import 'payment_card.dart';
+import 'models/card_model.dart' as paymentCardClass;
 import 'models/cards_repository.dart';
+import 'payment_card_widget.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,7 +36,10 @@ class MyApp extends StatelessWidget {
               searchBar,
               balance,
               cardsHeader,
-              individualPaymentCard,
+              SizedBox(
+                height: 230,
+                child: _buildPaymentCardsListView(context),
+              ),
             ],
           ),
         ),
@@ -193,8 +198,22 @@ Widget cardsHeader = Container(
   ),
 );
 
-PaymentCardWidget individualPaymentCard =
-    PaymentCardWidget(card: PaymentCardsRepository.loadPaymentCards()[0]);
+ListView _buildPaymentCardsListView(BuildContext context) {
+  final List<paymentCardClass.PaymentCard> cards =
+      PaymentCardsRepository.loadPaymentCards();
+
+  return ListView.builder(
+    padding: const EdgeInsets.all(8),
+    scrollDirection: Axis.horizontal,
+    itemCount: cards.length,
+    itemBuilder: (BuildContext context, int index) {
+      return Padding(
+        padding: EdgeInsets.only(left: 8.0, right: 8.0),
+        child: PaymentCardWidget(card: cards[index]),
+      );
+    },
+  );
+}
 
 ThemeData _buildAppTheme() {
   final ThemeData base = ThemeData.light();
