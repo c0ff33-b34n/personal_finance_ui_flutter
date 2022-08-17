@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:personal_finance_tracking_ui/models/card_model.dart';
+import 'package:personal_finance_tracking_ui/transaction_button.dart';
 
 import 'colors.dart';
 import 'models/card_model.dart' as paymentCardClass;
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
                 height: 230,
                 child: _buildPaymentCardsListView(context),
               ),
+              transactionButtons,
             ],
           ),
         ),
@@ -214,6 +216,40 @@ ListView _buildPaymentCardsListView(BuildContext context) {
     },
   );
 }
+
+Widget transactionButtons = Container(
+  padding: const EdgeInsets.all(16),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      TransactionButton(
+        buttonName: 'Send',
+        icon: const Icon(
+          Icons.arrow_circle_up_rounded,
+          color: kTextColorPrimaryDark,
+        ),
+      ),
+      TransactionButton(
+          buttonName: 'Receive',
+          icon: const Icon(
+            Icons.arrow_circle_down_rounded,
+            color: kTextColorPrimaryDark,
+          )),
+      TransactionButton(
+          buttonName: 'Swap',
+          icon: const Icon(
+            Icons.swap_horiz,
+            color: kTextColorPrimaryDark,
+          )),
+      TransactionButton(
+          buttonName: 'More',
+          icon: const Icon(
+            Icons.more_horiz,
+            color: kTextColorPrimaryDark,
+          )),
+    ],
+  ),
+);
 
 ThemeData _buildAppTheme() {
   final ThemeData base = ThemeData.light();
