@@ -43,7 +43,13 @@ class TransactionButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               icon,
-              Text(buttonName),
+              Text(
+                buttonName,
+                style: TextStyle(
+                    fontFamily: 'GilroyLight',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12.0),
+              ),
             ],
           ),
         ),

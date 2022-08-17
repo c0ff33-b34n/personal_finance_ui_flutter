@@ -126,8 +126,9 @@ class PaymentCardWidget extends StatelessWidget {
                           ? 'Debit Card'
                           : 'Credit Card',
                       style: TextStyle(
-                        fontSize: 16.0,
-                      ),
+                          fontSize: 16.0,
+                          fontFamily: 'GilroyLight',
+                          fontWeight: FontWeight.bold),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,16 +138,17 @@ class PaymentCardWidget extends StatelessWidget {
                           child: Text(
                             card.cardNumber,
                             style: TextStyle(
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 26.0,
+                              fontFamily: 'GilroyEB',
                             ),
                           ),
                         ),
                         Text(
                           'Valid Thru ' + card.expiryDate,
                           style: TextStyle(
-                            fontSize: 16.0,
-                          ),
+                              fontSize: 16.0,
+                              fontFamily: 'GilroyLight',
+                              fontWeight: FontWeight.bold),
                         ),
                       ],
                     ),

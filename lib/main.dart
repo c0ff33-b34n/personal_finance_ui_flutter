@@ -71,15 +71,17 @@ Widget userMessage = Container(
               child: const Text(
                 'Hello Martin,',
                 style: TextStyle(
-                  color: kTextColorSecondaryDark,
-                ),
+                    color: kTextColorSecondaryDark,
+                    fontSize: 15.0,
+                    fontFamily: 'GilroyLight',
+                    fontWeight: FontWeight.bold),
               ),
             ),
             const Text(
               'Welcome Back!',
               style: TextStyle(
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
+                fontFamily: 'GilroyEB',
+                fontSize: 22.0,
               ),
             ),
           ],
@@ -106,8 +108,9 @@ Widget searchBar = Container(
       ),
       hintText: 'Transactions, services or contracts',
       hintStyle: TextStyle(
-        color: kTextColorSecondaryDark,
-      ),
+          color: kTextColorSecondaryDark,
+          fontFamily: 'GilroyLight',
+          fontWeight: FontWeight.bold),
       fillColor: kBackgroundSecondaryDark,
       filled: true,
       prefixIcon: Icon(
@@ -132,15 +135,17 @@ Widget balance = Container(
               child: const Text(
                 'Total Balance',
                 style: TextStyle(
-                  color: kTextColorSecondaryDark,
-                ),
+                    color: kTextColorSecondaryDark,
+                    fontSize: 15.0,
+                    fontFamily: 'GilroyLight',
+                    fontWeight: FontWeight.bold),
               ),
             ),
             const Text(
               '\$ 123 640.32',
               style: TextStyle(
-                fontSize: 26.0,
-                fontWeight: FontWeight.bold,
+                fontSize: 34.0,
+                fontFamily: 'GilroyEB',
               ),
             ),
           ],
@@ -161,8 +166,8 @@ Widget cardsHeader = Container(
             const Text(
               'Cards',
               style: TextStyle(
+                fontFamily: 'GilroyEB',
                 fontSize: 20.0,
-                fontWeight: FontWeight.bold,
               ),
             ),
           ],
@@ -267,15 +272,17 @@ Widget recentActivityHeader = Container(
       const Text(
         'Recent activity',
         style: TextStyle(
+          fontFamily: 'GilroyEB',
           fontSize: 20.0,
-          fontWeight: FontWeight.bold,
         ),
       ),
       const Text(
         'See all',
         style: TextStyle(
-          color: kTextColorSecondaryDark,
-        ),
+            color: kTextColorSecondaryDark,
+            fontSize: 15.0,
+            fontFamily: 'GilroyLight',
+            fontWeight: FontWeight.bold),
       ),
     ],
   ),

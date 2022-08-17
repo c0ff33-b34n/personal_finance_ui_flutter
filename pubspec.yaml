@@ -33,10 +33,14 @@ flutter:
     - assets/bloke.jpg
     - assets/woman.jpg
 
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: GilroyEB
+      fonts:
+        - asset: assets/Gilroy-ExtraBold.otf
+
+    - family: GilroyLight
+      fonts:
+        - asset: assets/Gilroy-Light.otf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

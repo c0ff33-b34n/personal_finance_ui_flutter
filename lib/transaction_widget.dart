@@ -56,12 +56,18 @@ class TransactionWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(transaction.thirdPartyName),
+                          Text(
+                            transaction.thirdPartyName,
+                            style: TextStyle(
+                                fontFamily: 'GilroyEB', fontSize: 14.0),
+                          ),
                           Text(
                             transaction.transactionDate,
                             style: TextStyle(
-                              fontSize: 13.0,
                               color: kTextColorSecondaryDark,
+                              fontSize: 12.0,
+                              fontFamily: 'GilroyLight',
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ],
@@ -75,11 +81,19 @@ class TransactionWidget extends StatelessWidget {
                 child: transaction.paymentReceived == true
                     ? Text(
                         '+ \$ ' + transaction.paymentAmount.toStringAsFixed(2),
-                        style: TextStyle(color: kTextGreen),
+                        style: TextStyle(
+                            color: kTextGreen,
+                            fontSize: 13.0,
+                            fontFamily: 'GilroyLight',
+                            fontWeight: FontWeight.bold),
                       )
                     : Text(
                         '- \$ ' + transaction.paymentAmount.toStringAsFixed(2),
-                        style: TextStyle(color: kTextRed),
+                        style: TextStyle(
+                            color: kTextRed,
+                            fontSize: 13.0,
+                            fontFamily: 'GilroyLight',
+                            fontWeight: FontWeight.bold),
                       ),
               ),
             ],
