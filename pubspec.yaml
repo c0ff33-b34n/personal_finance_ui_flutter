@@ -29,6 +29,9 @@ flutter:
   assets:
     - assets/visa_logo_sm.png
     - assets/mastercard_logo_sm.png
+    - assets/app_store_logo_sm.png
+    - assets/bloke.jpg
+    - assets/woman.jpg
 
   # fonts:
   #   - family: Schyler

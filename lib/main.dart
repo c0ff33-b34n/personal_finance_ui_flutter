@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:personal_finance_tracking_ui/models/card_model.dart';
 import 'package:personal_finance_tracking_ui/transaction_button.dart';
+import 'package:personal_finance_tracking_ui/transaction_widget.dart';
 
 import 'colors.dart';
 import 'models/card_model.dart' as paymentCardClass;
@@ -42,6 +43,8 @@ class MyApp extends StatelessWidget {
                 child: _buildPaymentCardsListView(context),
               ),
               transactionButtons,
+              recentActivityHeader,
+              recentActivity,
             ],
           ),
         ),
@@ -250,6 +253,35 @@ Widget transactionButtons = Container(
     ],
   ),
 );
+
+Widget recentActivityHeader = Container(
+  padding: const EdgeInsets.all(16),
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      const Text(
+        'Recent activity',
+        style: TextStyle(
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      const Text(
+        'See all',
+        style: TextStyle(
+          color: kTextColorSecondaryDark,
+        ),
+      ),
+    ],
+  ),
+);
+
+Widget recentActivity = TransactionWidget(
+    assetImage: AssetImage('assets/app_store_logo_sm.png'),
+    thirdPartyName: 'App Store',
+    transactionDate: 'May 22 5:45 AM',
+    paymentAmount: 25.0,
+    paymentReceived: false);
 
 ThemeData _buildAppTheme() {
   final ThemeData base = ThemeData.light();
