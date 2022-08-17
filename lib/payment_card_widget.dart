@@ -17,43 +17,101 @@ class PaymentCardWidget extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0),
-          gradient: const LinearGradient(
-            begin: Alignment.bottomLeft,
-            end: Alignment.topRight,
-            // Add one stop for each color. Stops should increase from 0 to 1
-            stops: [0.0, 1.0],
-            colors: [
-              // Colors are easy thanks to Flutter's Colors class.
-              kGradientTransparent,
-              kGradientPoint5,
-            ],
-          ),
+          gradient: card.cardType == CardType.Visa
+              ? const LinearGradient(
+                  begin: Alignment.bottomLeft,
+                  end: Alignment.topRight,
+                  // Add one stop for each color. Stops should increase from 0 to 1
+                  stops: [0.0, 1.0],
+                  colors: [
+                    // Colors are easy thanks to Flutter's Colors class.
+                    kGradientTransparent,
+                    kGradientPoint5,
+                  ],
+                )
+              : const LinearGradient(
+                  begin: Alignment.bottomLeft,
+                  end: Alignment.topRight,
+                  // Add one stop for each color. Stops should increase from 0 to 1
+                  stops: [0.0, 1.0],
+                  colors: [
+                    // Colors are easy thanks to Flutter's Colors class.
+                    kGradientTransparent,
+                    kGradientPointB5,
+                  ],
+                ),
         ),
         child: Container(
           padding: const EdgeInsets.all(18),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20.0),
-            gradient: const LinearGradient(
-              // Where the linear gradient begins and ends
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              // Add one stop for each color. Stops should increase from 0 to 1
-              stops: [0.1, 0.2, 0.3, 0.40, 0.46, 0.55, 0.6, 0.7, 0.8, 0.9, 1.0],
-              colors: [
-                // Colors are easy thanks to Flutter's Colors class.
-                kGradientPoint1,
-                kGradientPoint2,
-                kGradientPoint3,
-                kGradientPoint2,
-                kGradientPoint5,
-                kGradientPoint4,
-                kGradientPoint5,
-                kGradientPoint4,
-                kGradientPoint3,
-                kGradientPoint2,
-                kGradientTransparent,
-              ],
-            ),
+            gradient: card.cardType == CardType.Visa
+                ? const LinearGradient(
+                    // Where the linear gradient begins and ends
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    // Add one stop for each color. Stops should increase from 0 to 1
+                    stops: [
+                      0.1,
+                      0.2,
+                      0.3,
+                      0.40,
+                      0.46,
+                      0.55,
+                      0.6,
+                      0.7,
+                      0.8,
+                      0.9,
+                      1.0
+                    ],
+                    colors: [
+                      // Colors are easy thanks to Flutter's Colors class.
+                      kGradientPoint1,
+                      kGradientPoint2,
+                      kGradientPoint3,
+                      kGradientPoint2,
+                      kGradientPoint5,
+                      kGradientPoint4,
+                      kGradientPoint5,
+                      kGradientPoint4,
+                      kGradientPoint3,
+                      kGradientPoint2,
+                      kGradientTransparent,
+                    ],
+                  )
+                : const LinearGradient(
+                    // Where the linear gradient begins and ends
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    // Add one stop for each color. Stops should increase from 0 to 1
+                    stops: [
+                      0.1,
+                      0.2,
+                      0.3,
+                      0.40,
+                      0.46,
+                      0.55,
+                      0.6,
+                      0.7,
+                      0.8,
+                      0.9,
+                      1.0
+                    ],
+                    colors: [
+                      // Colors are easy thanks to Flutter's Colors class.
+                      kGradientPointB1,
+                      kGradientPointB2,
+                      kGradientPointB3,
+                      kGradientPointB2,
+                      kGradientPointB5,
+                      kGradientPointB4,
+                      kGradientPointB5,
+                      kGradientPointB4,
+                      kGradientPointB3,
+                      kGradientPointB2,
+                      kGradientTransparent,
+                    ],
+                  ),
           ),
           child: Row(
             children: [

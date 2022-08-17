@@ -19,3 +19,10 @@ const kGradientPoint4 = Color(0x88FF8049);
 const kGradientPoint5 = Color(0xFFFE996F);
 const kGradientPoint6 = Color(0xFFFE996F);
 const kGradientPink = Color(0xFFFE1696);
+
+const kGradientPointB1 = Color(0xFF6454FF);
+const kGradientPointB2 = Color(0x776454EE);
+const kGradientPointB3 = Color(0xFF7954FF);
+const kGradientPointB4 = Color(0x884954EE);
+const kGradientPointB5 = Color(0xFF6F54FE);
+const kGradientPointB6 = Color(0xFF6F54FE);
