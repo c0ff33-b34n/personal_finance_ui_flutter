@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:personal_finance_tracking_ui/colors.dart';
+import 'models/transaction_model.dart';
 
 class TransactionWidget extends StatelessWidget {
-  const TransactionWidget(
-      {required this.assetImage,
-      required this.thirdPartyName,
-      required this.transactionDate,
-      required this.paymentAmount,
-      required this.paymentReceived,
-      Key? key})
+  const TransactionWidget({required this.transaction, Key? key})
       : super(key: key);
 
-  final ImageProvider assetImage;
-  final String thirdPartyName;
-  final String transactionDate;
-  final double paymentAmount;
-  final bool paymentReceived;
+  final Transaction transaction;
 
   @override
   Widget build(BuildContext context) {
@@ -58,16 +49,16 @@ class TransactionWidget extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 8.0, right: 12.0),
                         child: CircleAvatar(
                           radius: 22.0,
-                          backgroundImage: assetImage,
+                          backgroundImage: transaction.assetImage,
                         ),
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(thirdPartyName),
+                          Text(transaction.thirdPartyName),
                           Text(
-                            transactionDate,
+                            transaction.transactionDate,
                             style: TextStyle(
                               fontSize: 13.0,
                               color: kTextColorSecondaryDark,
@@ -81,13 +72,13 @@ class TransactionWidget extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: paymentReceived == true
+                child: transaction.paymentReceived == true
                     ? Text(
-                        '+ \$ ' + paymentAmount.toStringAsFixed(2),
+                        '+ \$ ' + transaction.paymentAmount.toStringAsFixed(2),
                         style: TextStyle(color: kTextGreen),
                       )
                     : Text(
-                        '- \$ ' + paymentAmount.toStringAsFixed(2),
+                        '- \$ ' + transaction.paymentAmount.toStringAsFixed(2),
                         style: TextStyle(color: kTextRed),
                       ),
               ),

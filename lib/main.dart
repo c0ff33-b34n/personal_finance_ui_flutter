@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:personal_finance_tracking_ui/models/card_model.dart';
+import 'transaction_widget.dart';
+import 'models/transaction_repository.dart';
 import 'package:personal_finance_tracking_ui/transaction_button.dart';
-import 'package:personal_finance_tracking_ui/transaction_widget.dart';
 
 import 'colors.dart';
 import 'models/card_model.dart' as paymentCardClass;
 import 'models/cards_repository.dart';
+import 'models/transaction_model.dart' as transactionModelClass;
 import 'payment_card_widget.dart';
 
 void main() {
@@ -31,8 +32,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Container(
           color: kBackgroundPrimaryDark,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+          child: ListView(
             children: [
               userMessage,
               searchBar,
@@ -44,7 +44,11 @@ class MyApp extends StatelessWidget {
               ),
               transactionButtons,
               recentActivityHeader,
-              recentActivity,
+              SizedBox(
+                height: 180.0,
+                width: 362,
+                child: _buildTransactionsListView(context),
+              ),
             ],
           ),
         ),
@@ -276,12 +280,22 @@ Widget recentActivityHeader = Container(
   ),
 );
 
-Widget recentActivity = TransactionWidget(
-    assetImage: AssetImage('assets/app_store_logo_sm.png'),
-    thirdPartyName: 'App Store',
-    transactionDate: 'May 22 5:45 AM',
-    paymentAmount: 25.0,
-    paymentReceived: false);
+ListView _buildTransactionsListView(BuildContext context) {
+  final List<transactionModelClass.Transaction> transactions =
+      TransactionsRepository.loadTransactions();
+
+  return ListView.builder(
+    padding: const EdgeInsets.all(8),
+    scrollDirection: Axis.vertical,
+    itemCount: transactions.length,
+    itemBuilder: (BuildContext context, int index) {
+      return Padding(
+        padding: EdgeInsets.only(bottom: 8.0),
+        child: TransactionWidget(transaction: transactions[index]),
+      );
+    },
+  );
+}
 
 ThemeData _buildAppTheme() {
   final ThemeData base = ThemeData.light();
