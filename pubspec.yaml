@@ -37,6 +37,11 @@ flutter:
     - assets/toprightarrow.svg
     - assets/bottomleftarrow.svg
     - assets/fourroundedsquares.svg
+    - assets/home_rounded.svg
+    - assets/graph_rounded.svg
+    - assets/scan.svg
+    - assets/messages.svg
+    - assets/person.svg
 
   fonts:
     - family: GilroyEB

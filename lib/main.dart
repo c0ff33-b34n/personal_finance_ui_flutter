@@ -76,17 +76,22 @@ class MyApp extends StatelessWidget {
               backgroundColor: kBackgroundSecondaryDarkTranslucent,
               selectedItemColor: kTextColorPrimaryDark,
               unselectedItemColor: kTextColorSecondaryDark,
-              items: const <BottomNavigationBarItem>[
+              items: <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.home_filled), label: 'Home'),
+                    icon: SvgPicture.asset('assets/home_rounded.svg'),
+                    label: 'Home'),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.bar_chart), label: 'Graph'),
+                    icon: SvgPicture.asset('assets/graph_rounded.svg'),
+                    label: 'Graph'),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.qr_code), label: 'Scanner'),
+                    icon: SvgPicture.asset('assets/scan.svg'),
+                    label: 'Scanner'),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.chat), label: 'Messages'),
+                    icon: SvgPicture.asset('assets/messages.svg'),
+                    label: 'Messages'),
                 BottomNavigationBarItem(
-                    icon: Icon(Icons.person), label: 'Contacts'),
+                    icon: SvgPicture.asset('assets/person.svg'),
+                    label: 'Contacts'),
               ],
             ),
           ),
