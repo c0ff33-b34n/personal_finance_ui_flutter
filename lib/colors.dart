@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const kBackgroundPrimaryDark = Color(0xFF020236);
 const kBackgroundSecondaryDark = Color(0xFF1B1C4A);
+const kBackgroundSecondaryDarkTranslucent = Color(0xEE1B1C4A);
 const kTextColorPrimaryDark = Color(0xFFFFFFFF);
 const kTextColorSecondaryDark = Color(0xFF7D7BAC);
 

@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        extendBody: true,
         body: Container(
           color: kBackgroundPrimaryDark,
           child: ListView(
@@ -51,6 +52,43 @@ class MyApp extends StatelessWidget {
                 child: _buildTransactionsListView(context),
               ),
             ],
+          ),
+        ),
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.0),
+              topRight: Radius.circular(20.0),
+            ),
+            boxShadow: [
+              BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20.0),
+              topRight: Radius.circular(20.0),
+            ),
+            child: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              showSelectedLabels: false,
+              showUnselectedLabels: false,
+              backgroundColor: kBackgroundSecondaryDarkTranslucent,
+              selectedItemColor: kTextColorPrimaryDark,
+              unselectedItemColor: kTextColorSecondaryDark,
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.home_filled), label: 'Home'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.bar_chart), label: 'Graph'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.qr_code), label: 'Scanner'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.chat), label: 'Messages'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.person), label: 'Contacts'),
+              ],
+            ),
           ),
         ),
       ),
