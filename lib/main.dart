@@ -243,17 +243,12 @@ Widget transactionButtons = Container(
     children: [
       TransactionButton(
         buttonName: 'Send',
-        icon: const Icon(
-          Icons.arrow_circle_up_rounded,
-          color: kTextColorPrimaryDark,
-        ),
+        icon: SvgPicture.asset('assets/toprightarrow.svg'),
       ),
       TransactionButton(
-          buttonName: 'Receive',
-          icon: const Icon(
-            Icons.arrow_circle_down_rounded,
-            color: kTextColorPrimaryDark,
-          )),
+        buttonName: 'Receive',
+        icon: SvgPicture.asset('assets/bottomleftarrow.svg'),
+      ),
       TransactionButton(
           buttonName: 'Swap',
           icon: const Icon(
@@ -262,10 +257,7 @@ Widget transactionButtons = Container(
           )),
       TransactionButton(
           buttonName: 'More',
-          icon: const Icon(
-            Icons.more_horiz,
-            color: kTextColorPrimaryDark,
-          )),
+          icon: SvgPicture.asset('assets/fourroundedsquares.svg')),
     ],
   ),
 );
