@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Notification-Bell" serif:id="Notification Bell" transform="matrix(0.877666,0,0,0.877666,-325.718,-41.6858)">
+        <g transform="matrix(1,0,0,1,-0.139385,-3)">
+            <path d="M389,73.016C389,75.937 387.432,77 385.5,77C383.568,77 382,75.937 382,73.016M387.25,73.016C387.25,74.976 386.466,75.26 385.5,75.26C384.534,75.26 383.75,74.976 383.75,73.016" style="fill:white;"/>
+        </g>
+        <g transform="matrix(1,0,0,1,-0.139385,-0.0230899)">
+            <path d="M385.5,70C382,70 373.304,71.109 377,61.5C379.5,55 377.5,50.5 385.5,50.5C393.5,50.5 391.5,55 394,61.5C397.696,71.109 389,70 385.5,70Z" style="fill:white;"/>
+        </g>
+        <g transform="matrix(1.42857,0,0,1.42857,-173.103,-29.0945)">
+            <circle cx="395.5" cy="58.5" r="3.5" style="fill:rgb(238,38,110);stroke:black;stroke-width:0.65px;"/>
+        </g>
+    </g>
+</svg>

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/svg.dart';
 import 'transaction_widget.dart';
 import 'models/transaction_repository.dart';
 import 'package:personal_finance_tracking_ui/transaction_button.dart';
@@ -87,7 +88,12 @@ Widget userMessage = Container(
           ],
         ),
       ),
-      Icon(Icons.notifications, color: kTextColorPrimaryDark),
+      GestureDetector(
+          // This could be made into a separate widget to switch icon without red dot depending on state
+          onTap: () {
+            print("Notification icon pressed");
+          },
+          child: SvgPicture.asset('assets/notification.svg')),
     ],
   ),
 );

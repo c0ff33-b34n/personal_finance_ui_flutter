@@ -14,6 +14,7 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
+  flutter_svg: ^1.1.4
 
 dev_dependencies:
   flutter_test:
@@ -32,6 +33,7 @@ flutter:
     - assets/app_store_logo_sm.png
     - assets/bloke.jpg
     - assets/woman.jpg
+    - assets/notification.svg
 
   fonts:
     - family: GilroyEB
