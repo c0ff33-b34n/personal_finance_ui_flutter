@@ -70,6 +70,7 @@ class MyApp extends StatelessWidget {
               topRight: Radius.circular(20.0),
             ),
             child: BottomNavigationBar(
+              currentIndex: 0,
               type: BottomNavigationBarType.fixed,
               showSelectedLabels: false,
               showUnselectedLabels: false,
@@ -78,19 +79,40 @@ class MyApp extends StatelessWidget {
               unselectedItemColor: kTextColorSecondaryDark,
               items: <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
-                    icon: SvgPicture.asset('assets/home_rounded.svg'),
+                    icon: SvgPicture.asset(
+                      'assets/home_rounded.svg',
+                      color: const Color.fromRGBO(255, 255, 255, 0.5),
+                    ),
+                    activeIcon: SvgPicture.asset(
+                      'assets/home_rounded.svg',
+                    ),
                     label: 'Home'),
                 BottomNavigationBarItem(
-                    icon: SvgPicture.asset('assets/graph_rounded.svg'),
+                    icon: Opacity(
+                      opacity: 0.5,
+                      child: SvgPicture.asset(
+                        'assets/graph_rounded.svg',
+                      ),
+                    ),
+                    activeIcon: SvgPicture.asset('assets/graph_rounded.svg'),
                     label: 'Graph'),
                 BottomNavigationBarItem(
-                    icon: SvgPicture.asset('assets/scan.svg'),
+                    icon: SvgPicture.asset(
+                      'assets/scan.svg',
+                      color: const Color.fromRGBO(255, 255, 255, 0.5),
+                    ),
+                    activeIcon: SvgPicture.asset('assets/scan.svg'),
                     label: 'Scanner'),
                 BottomNavigationBarItem(
-                    icon: SvgPicture.asset('assets/messages.svg'),
+                    icon: Opacity(
+                        opacity: 0.5,
+                        child: SvgPicture.asset('assets/messages.svg')),
+                    activeIcon: SvgPicture.asset('assets/messages.svg'),
                     label: 'Messages'),
                 BottomNavigationBarItem(
-                    icon: SvgPicture.asset('assets/person.svg'),
+                    icon: SvgPicture.asset('assets/person.svg',
+                        color: const Color.fromRGBO(255, 255, 255, 0.5)),
+                    activeIcon: SvgPicture.asset('assets/person.svg'),
                     label: 'Contacts'),
               ],
             ),
